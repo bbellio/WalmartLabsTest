@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		FC0CCD7823D6448700F08876 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCD7723D6448700F08876 /* Product.swift */; };
 		FC0CCD7C23D64E6F00F08876 /* ProductController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCD7B23D64E6F00F08876 /* ProductController.swift */; };
+		FC0CCD7F23D65AA100F08876 /* ProductListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCD7E23D65AA100F08876 /* ProductListTableViewController.swift */; };
+		FC0CCD8123D663B900F08876 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCD8023D663B900F08876 /* ProductDetailViewController.swift */; };
 		FC72582D23D63C04009125BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC72582C23D63C04009125BB /* AppDelegate.swift */; };
 		FC72582F23D63C04009125BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC72582E23D63C04009125BB /* SceneDelegate.swift */; };
 		FC72583423D63C04009125BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC72583223D63C04009125BB /* Main.storyboard */; };
@@ -19,6 +21,8 @@
 /* Begin PBXFileReference section */
 		FC0CCD7723D6448700F08876 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		FC0CCD7B23D64E6F00F08876 /* ProductController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductController.swift; sourceTree = "<group>"; };
+		FC0CCD7E23D65AA100F08876 /* ProductListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListTableViewController.swift; sourceTree = "<group>"; };
+		FC0CCD8023D663B900F08876 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		FC72582923D63C04009125BB /* WalmartLabsTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalmartLabsTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC72582C23D63C04009125BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC72582E23D63C04009125BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,12 +51,21 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		FC0CCD7A23D64E5600F08876 /* Controllers */ = {
+		FC0CCD7A23D64E5600F08876 /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				FC0CCD7B23D64E6F00F08876 /* ProductController.swift */,
 			);
-			path = Controllers;
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		FC0CCD7D23D65A8900F08876 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FC0CCD7E23D65AA100F08876 /* ProductListTableViewController.swift */,
+				FC0CCD8023D663B900F08876 /* ProductDetailViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 		FC72582023D63C04009125BB = {
@@ -75,7 +88,8 @@
 			isa = PBXGroup;
 			children = (
 				FC0CCD7623D6432200F08876 /* Models */,
-				FC0CCD7A23D64E5600F08876 /* Controllers */,
+				FC0CCD7A23D64E5600F08876 /* Model Controllers */,
+				FC0CCD7D23D65A8900F08876 /* View Controllers */,
 				FC72584223D63C7B009125BB /* Storyboards */,
 				FC72584023D63C4D009125BB /* Resources */,
 			);
@@ -176,7 +190,9 @@
 				FC72582D23D63C04009125BB /* AppDelegate.swift in Sources */,
 				FC72582F23D63C04009125BB /* SceneDelegate.swift in Sources */,
 				FC0CCD7823D6448700F08876 /* Product.swift in Sources */,
+				FC0CCD7F23D65AA100F08876 /* ProductListTableViewController.swift in Sources */,
 				FC0CCD7C23D64E6F00F08876 /* ProductController.swift in Sources */,
+				FC0CCD8123D663B900F08876 /* ProductDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

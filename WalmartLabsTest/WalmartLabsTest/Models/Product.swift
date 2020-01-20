@@ -16,10 +16,10 @@ struct Product: Decodable {
     let productName: String
     let productId: String
     let inStock: Bool
-    let shortDescription: String
-    let longDescription: String
+    let shortDescription: String?
+    let longDescription: String?
     let price: String
     let reviewCount: Int
-    let reviewRating: Int
+    let reviewRating: Double
     let productImage: String
 }
