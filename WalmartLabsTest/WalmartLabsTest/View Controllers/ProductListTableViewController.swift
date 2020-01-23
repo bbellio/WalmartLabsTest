@@ -17,17 +17,31 @@ class ProductListTableViewController: UITableViewController {
             }
         }
     }
+    var currentPage = 1
+//    var keepFetching = true
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+//        tableView.prefetchDataSource = self
         loadProducts()
     }
     
     // MARK: - Custom Methods
     func loadProducts() {
-        ProductController.getProducts { (products) in
+        ProductController.getProducts(for: currentPage) { (products) in
             self.products = products
+            print(products.count)
+        }
+    }
+    
+    func loadMoreProducts() {
+        ProductController.getProducts(for: currentPage) { (newProducts) in
+            self.products.append(contentsOf: newProducts)
+//            self.keepFetching = false
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
 
@@ -43,7 +57,25 @@ class ProductListTableViewController: UITableViewController {
         cell.detailTextLabel?.text = product.price
         return cell
     }
-  
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == products.count - 1 {
+            currentPage += 1
+            loadMoreProducts()
+        }
+    }
+    
+//    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        let yOffset = scrollView.contentOffset.y
+//        let contentHeight = scrollView.contentSize.height
+//        if yOffset > contentHeight - scrollView.frame.height {
+//            if keepFetching {
+//                currentPage += 1
+//                loadMoreProducts()
+//            }
+//        }
+//    }
+    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toProductDetailVC" {
@@ -53,3 +85,11 @@ class ProductListTableViewController: UITableViewController {
         }
     }
 }
+
+//extension ProductListTableViewController: UITableViewDataSourcePrefetching {
+//    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+//        for indexPath in indexPaths {
+//
+//        }
+//    }
+//}

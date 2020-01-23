@@ -11,6 +11,7 @@
 		FC0CCD7C23D64E6F00F08876 /* ProductController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCD7B23D64E6F00F08876 /* ProductController.swift */; };
 		FC0CCD7F23D65AA100F08876 /* ProductListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCD7E23D65AA100F08876 /* ProductListTableViewController.swift */; };
 		FC0CCD8123D663B900F08876 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCD8023D663B900F08876 /* ProductDetailViewController.swift */; };
+		FC1D1B4323D94BE100C15274 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1D1B4223D94BE100C15274 /* StringExtension.swift */; };
 		FC72582D23D63C04009125BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC72582C23D63C04009125BB /* AppDelegate.swift */; };
 		FC72582F23D63C04009125BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC72582E23D63C04009125BB /* SceneDelegate.swift */; };
 		FC72583423D63C04009125BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC72583223D63C04009125BB /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 		FC0CCD7B23D64E6F00F08876 /* ProductController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductController.swift; sourceTree = "<group>"; };
 		FC0CCD7E23D65AA100F08876 /* ProductListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListTableViewController.swift; sourceTree = "<group>"; };
 		FC0CCD8023D663B900F08876 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		FC1D1B4223D94BE100C15274 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		FC72582923D63C04009125BB /* WalmartLabsTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalmartLabsTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC72582C23D63C04009125BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC72582E23D63C04009125BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				FC0CCD7D23D65A8900F08876 /* View Controllers */,
 				FC72584223D63C7B009125BB /* Storyboards */,
 				FC72584023D63C4D009125BB /* Resources */,
+				FC1D1B4223D94BE100C15274 /* StringExtension.swift */,
 			);
 			path = WalmartLabsTest;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC72582D23D63C04009125BB /* AppDelegate.swift in Sources */,
+				FC1D1B4323D94BE100C15274 /* StringExtension.swift in Sources */,
 				FC72582F23D63C04009125BB /* SceneDelegate.swift in Sources */,
 				FC0CCD7823D6448700F08876 /* Product.swift in Sources */,
 				FC0CCD7F23D65AA100F08876 /* ProductListTableViewController.swift in Sources */,

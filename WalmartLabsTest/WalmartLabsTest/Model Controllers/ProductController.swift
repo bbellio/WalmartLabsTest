@@ -9,24 +9,26 @@
 import UIKit
 
 class ProductController {
-    private static let productURL = URL(string: "https://mobile-tha-server.firebaseapp.com/walmartproducts/1/15")
+    // "https://mobile-tha-server.firebaseapp.com/walmartproducts/1/15"
+    private static let productURL = URL(string: "https://mobile-tha-server.firebaseapp.com/walmartproducts")
     private static let imageURL = URL(string: "https://mobile-tha-server.firebaseapp.com")
     
-    static func getProducts(completion: @escaping ([Product]) -> Void) {
-        guard let unwrappedFinalURL = productURL else { return }
-        URLSession.shared.dataTask(with: unwrappedFinalURL) { (data, _, error) in
+    static func getProducts(for page: Int, completion: @escaping ([Product]) -> Void) {
+        guard let unwrappedURL = productURL else { return }
+        let pageURL = unwrappedURL.appendingPathComponent("\(page)")
+        let productAmountURL = pageURL.appendingPathComponent("15")
+        guard let finalURL = URLComponents(url: productAmountURL, resolvingAgainstBaseURL: true)?.url else { return }
+        URLSession.shared.dataTask(with: finalURL) { (data, _, error) in
             if let error = error {
                 print("Error in dataTask : \(error.localizedDescription) \n---\n \(error)")
                 completion([])
                 return
             }
-            
             guard let data = data else {
                 print("No data")
                 completion([])
                 return
             }
-            
             do {
                 let decodedSearchResults = try JSONDecoder().decode(DataResults.self, from: data)
                 completion(decodedSearchResults.products)
@@ -43,22 +45,18 @@ class ProductController {
             completion(nil)
             return
         }
-        
         let imageURLWithValue = unwrappedImageURL.appendingPathComponent(product.productImage)
-        
         URLSession.shared.dataTask(with: imageURLWithValue) { (data, _, error) in
             if let error = error {
                 print("Error in dataTask : \(error.localizedDescription) \n---\n \(error)")
                 completion(nil)
                 return
             }
-            
             guard let data = data else {
                 print("No data")
                 completion(nil)
                 return
             }
-            
             guard let image = UIImage(data: data) else {
                 print("No image")
                 return

@@ -45,8 +45,8 @@ class ProductDetailViewController: UIViewController {
         inStockLabel.textColor = product.inStock ? .green : .red
         setStars()
         reviewCount.text = product.reviewCount == 1 ? "\(product.reviewCount) Review" : "\(product.reviewCount) Reviews"
-        shortDescriptionTextView.text = product.shortDescription != nil ? product.shortDescription : "No details found."
-        longDescriptionView.text = product.longDescription != nil ? product.longDescription : "No additional details."
+        shortDescriptionTextView.text = product.shortDescription != nil ? product.shortDescription?.htmlToString : "No details found."
+        longDescriptionView.text = product.longDescription != nil ? product.longDescription?.htmlToString : "No additional details."
     }
     
     func setStars() {
