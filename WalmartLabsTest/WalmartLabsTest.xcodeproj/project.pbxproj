@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC047D6723DA707600F13949 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC047D6623DA707600F13949 /* ProductTableViewCell.swift */; };
 		FC0CCD7823D6448700F08876 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCD7723D6448700F08876 /* Product.swift */; };
 		FC0CCD7C23D64E6F00F08876 /* ProductController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCD7B23D64E6F00F08876 /* ProductController.swift */; };
 		FC0CCD7F23D65AA100F08876 /* ProductListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCD7E23D65AA100F08876 /* ProductListTableViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC047D6623DA707600F13949 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		FC0CCD7723D6448700F08876 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		FC0CCD7B23D64E6F00F08876 /* ProductController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductController.swift; sourceTree = "<group>"; };
 		FC0CCD7E23D65AA100F08876 /* ProductListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListTableViewController.swift; sourceTree = "<group>"; };
@@ -53,12 +55,12 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		FC0CCD7A23D64E5600F08876 /* Model Controllers */ = {
+		FC0CCD7A23D64E5600F08876 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
 				FC0CCD7B23D64E6F00F08876 /* ProductController.swift */,
 			);
-			path = "Model Controllers";
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		FC0CCD7D23D65A8900F08876 /* View Controllers */ = {
@@ -90,11 +92,11 @@
 			isa = PBXGroup;
 			children = (
 				FC0CCD7623D6432200F08876 /* Models */,
-				FC0CCD7A23D64E5600F08876 /* Model Controllers */,
+				FC0CCD7A23D64E5600F08876 /* Networking */,
 				FC0CCD7D23D65A8900F08876 /* View Controllers */,
-				FC72584223D63C7B009125BB /* Storyboards */,
+				FCDA94FD23DA58E400DE1C26 /* Views */,
+				FCDA94FE23DA591D00DE1C26 /* Helper Files */,
 				FC72584023D63C4D009125BB /* Resources */,
-				FC1D1B4223D94BE100C15274 /* StringExtension.swift */,
 			);
 			path = WalmartLabsTest;
 			sourceTree = "<group>";
@@ -117,6 +119,23 @@
 				FC72583723D63C06009125BB /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		FCDA94FD23DA58E400DE1C26 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FC047D6623DA707600F13949 /* ProductTableViewCell.swift */,
+				FC72584223D63C7B009125BB /* Storyboards */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FCDA94FE23DA591D00DE1C26 /* Helper Files */ = {
+			isa = PBXGroup;
+			children = (
+				FC1D1B4223D94BE100C15274 /* StringExtension.swift */,
+			);
+			path = "Helper Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC72582D23D63C04009125BB /* AppDelegate.swift in Sources */,
+				FC047D6723DA707600F13949 /* ProductTableViewCell.swift in Sources */,
 				FC1D1B4323D94BE100C15274 /* StringExtension.swift in Sources */,
 				FC72582F23D63C04009125BB /* SceneDelegate.swift in Sources */,
 				FC0CCD7823D6448700F08876 /* Product.swift in Sources */,

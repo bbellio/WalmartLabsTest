@@ -9,7 +9,6 @@
 import UIKit
 
 class ProductController {
-    // "https://mobile-tha-server.firebaseapp.com/walmartproducts/1/15"
     private static let productURL = URL(string: "https://mobile-tha-server.firebaseapp.com/walmartproducts")
     private static let imageURL = URL(string: "https://mobile-tha-server.firebaseapp.com")
     

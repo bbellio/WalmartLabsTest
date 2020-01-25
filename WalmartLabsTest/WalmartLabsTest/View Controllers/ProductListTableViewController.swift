@@ -18,12 +18,11 @@ class ProductListTableViewController: UITableViewController {
         }
     }
     var currentPage = 1
-//    var keepFetching = true
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-//        tableView.prefetchDataSource = self
+        tableView.rowHeight = 150
         loadProducts()
     }
     
@@ -31,14 +30,12 @@ class ProductListTableViewController: UITableViewController {
     func loadProducts() {
         ProductController.getProducts(for: currentPage) { (products) in
             self.products = products
-            print(products.count)
         }
     }
     
     func loadMoreProducts() {
         ProductController.getProducts(for: currentPage) { (newProducts) in
             self.products.append(contentsOf: newProducts)
-//            self.keepFetching = false
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -51,10 +48,11 @@ class ProductListTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "productCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "productCell", for: indexPath) as? ProductTableViewCell else { return UITableViewCell() }
         let product = products[indexPath.row]
-        cell.textLabel?.text = product.productName
-        cell.detailTextLabel?.text = product.price
+        cell.product = product
+//        cell.textLabel?.text = product.productName
+//        cell.detailTextLabel?.text = product.price
         return cell
     }
     
@@ -65,17 +63,6 @@ class ProductListTableViewController: UITableViewController {
         }
     }
     
-//    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        let yOffset = scrollView.contentOffset.y
-//        let contentHeight = scrollView.contentSize.height
-//        if yOffset > contentHeight - scrollView.frame.height {
-//            if keepFetching {
-//                currentPage += 1
-//                loadMoreProducts()
-//            }
-//        }
-//    }
-    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toProductDetailVC" {
@@ -85,11 +72,3 @@ class ProductListTableViewController: UITableViewController {
         }
     }
 }
-
-//extension ProductListTableViewController: UITableViewDataSourcePrefetching {
-//    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-//        for indexPath in indexPaths {
-//
-//        }
-//    }
-//}
