@@ -2,16 +2,18 @@
 //  ProductController.swift
 //  WalmartLabsTest
 //
-//  Created by Bethany Wride on 1/20/20.
+//  Created by Bethany Bellio on 1/20/20.
 //  Copyright © 2020 Bethany Bellio. All rights reserved.
 //
 
 import UIKit
 
 class ProductController {
+    // MARK: - Properties and Global Variables
     private static let productURL = URL(string: "https://mobile-tha-server.firebaseapp.com/walmartproducts")
     private static let imageURL = URL(string: "https://mobile-tha-server.firebaseapp.com")
     
+    // MARK: - Networking
     static func getProducts(for page: Int, completion: @escaping ([Product]) -> Void) {
         guard let unwrappedURL = productURL else { return }
         let pageURL = unwrappedURL.appendingPathComponent("\(page)")

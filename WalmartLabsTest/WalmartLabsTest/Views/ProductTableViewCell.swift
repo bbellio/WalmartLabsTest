@@ -2,14 +2,14 @@
 //  ProductTableViewCell.swift
 //  WalmartLabsTest
 //
-//  Created by Bethany Wride on 1/23/20.
+//  Created by Bethany Bellio on 1/23/20.
 //  Copyright © 2020 Bethany Bellio. All rights reserved.
 //
 
 import UIKit
 
 class ProductTableViewCell: UITableViewCell {
-    
+    // MARK: - Properties and Global Variables
     var product: Product? {
         didSet {
             updateViews()
@@ -18,6 +18,7 @@ class ProductTableViewCell: UITableViewCell {
         }
     }
     
+    // MARK: - Outlets
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productTitleLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
@@ -26,15 +27,8 @@ class ProductTableViewCell: UITableViewCell {
     @IBOutlet weak var star3: UIImageView!
     @IBOutlet weak var star4: UIImageView!
     @IBOutlet weak var star5: UIImageView!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-
+    // MARK: - Custom Methods
     func updateViews() {
         guard let product = product else { return }
         productTitleLabel.text = product.productName

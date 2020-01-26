@@ -2,7 +2,7 @@
 //  StringExtension.swift
 //  WalmartLabsTest
 //
-//  Created by Bethany Wride on 1/22/20.
+//  Created by Bethany Bellio on 1/22/20.
 //  Copyright © 2020 Bethany Bellio. All rights reserved.
 //
 
