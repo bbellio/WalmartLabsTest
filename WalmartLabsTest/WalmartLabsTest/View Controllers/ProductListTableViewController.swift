@@ -22,7 +22,7 @@ class ProductListTableViewController: UITableViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.rowHeight = 150
+        tableView.rowHeight = 160
         loadProducts()
     }
     
@@ -51,8 +51,6 @@ class ProductListTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "productCell", for: indexPath) as? ProductTableViewCell else { return UITableViewCell() }
         let product = products[indexPath.row]
         cell.product = product
-//        cell.textLabel?.text = product.productName
-//        cell.detailTextLabel?.text = product.price
         return cell
     }
     

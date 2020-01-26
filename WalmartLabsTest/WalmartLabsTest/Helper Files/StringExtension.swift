@@ -17,7 +17,7 @@ extension String {
             return NSAttributedString()
         }
     }
-    var htmlToString: String {
+    var attributedToString: String {
         return htmlToAttributedString?.string ?? ""
     }
 }
